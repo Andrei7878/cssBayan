@@ -1,9 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16px;
+    font-weight: 700;
     line-height: 1.5;
-
-    background-color: #9caa20;
+    width: 90%;
+    max-width: 1920px;
+    background-color: #aca7a2;
 }
 
 *,
@@ -24,7 +26,7 @@ p {
 /* acordion*/
 
 .acordion {
-    max-width: 500px;
+    max-width: 550px;
     margin: 20px auto;
 }
 
@@ -39,10 +41,29 @@ p {
     padding: 10px 15px;
     position: relative;
 
-    color: #fff;
+    color: #050505;
     cursor: pointer;
 
     transition: background .2s ease-out;
+}
+
+.acordion-input{
+    display:none;
+    margin-left:-350px;
+    padding:10px;
+    margin-top:17px;
+    background:#080808;
+    height:200px;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+.acordion-input:hover .acordion-title{
+    display:block;
+    position:absolute;
+    top:120px;
+    z-index:9999;
+    width:400px;
 }
 
 .acordion-title:after {
@@ -51,7 +72,7 @@ p {
 
     border-style: solid;
     border-width: 8px 5px 0 5px;
-    border-color: #fff transparent transparent transparent;
+    border-color: #070606 transparent transparent transparent;
 
     position: absolute;
     top: 50%;
@@ -61,7 +82,15 @@ p {
 }
 
 .acordion-title:hover {
-    background-color: #b91125;
+    background-color: #4e4bda;
+}
+
+.acordion-title:hover + div {
+    display:block;
+    padding: 10px 15px;
+
+    color: #fff;
+    font-size: 14px;
 }
 
 .acordion-input {
@@ -72,4 +101,26 @@ p {
     appearance: none;
 
     position: absolute;
+}
+
+.acordion-input:checked ~ .acordion-title {
+    background-color: #b91125;
+}
+
+.acordion-input:checked ~ .acordion-title:after {
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent #fff transparent;
+}
+
+.acordion-input:checked ~ .acordion-img {
+    display: block;
+}
+
+.acordion-img {
+    display: none;
+    padding: 10px 15px;
+
+    color: #fff;
+    font-size: 14px;
 }
