@@ -33,3 +33,43 @@ p {
 
     border: 1px solid #1fd36a;
 }
+
+.acordion-title {
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+
+    color: #fff;
+    cursor: pointer;
+
+    transition: background .2s ease-out;
+}
+
+.acordion-title:after {
+    content: "";
+    display: block;
+
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    transform: translateY(-50%);
+}
+
+.acordion-title:hover {
+    background-color: #b91125;
+}
+
+.acordion-input {
+    width: 0;
+    height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    position: absolute;
+}
